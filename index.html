@@ -21,14 +21,12 @@
 
         // 枠付きテキストを描画する
         const drawFramedText = (ctx, text, x, y, fontSize, data, fillStyle = "black", fontName = "sans-serif", align = "left", baseline = "top") => {
-            // 修正：テンプレートリテラルのクォーテーションを修正
             ctx.font = `${fontSize}px ${fontName}`;
             ctx.textAlign = align;
             ctx.textBaseline = baseline;
             ctx.lineJoin = "round"; // 枠の角を丸くして綺麗にする
 
             for (let item of data) {
-                // 修正：data ではなくループ内の item を参照
                 ctx.lineWidth = item.thickness * 2;
                 ctx.strokeStyle = item.color;
                 
